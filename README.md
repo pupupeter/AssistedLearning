@@ -40,6 +40,8 @@ Cell In[2], line 27, in main()
      30 # 當對話中出現 "exit" 時即終止對話
 
 File ~\Desktop\321\new-venv\Lib\site-packages\autogen_ext\agents\web_surfer\_multimodal_web_surfer.py:268, in MultimodalWebSurfer.__init__(self, name, model_client, downloads_folder, description, debug_dir, headless, start_page, animate_actions, to_save_screenshots, use_ocr, browser_channel, browser_data_dir, to_resize_viewport, playwright, context)
+
+'''
     265 self._download_handler = _download_handler
     267 # Define the Playwright controller that handles the browser interactions
 --> 268 self._playwright_controller = PlaywrightController(
@@ -64,6 +66,9 @@ File ~\Desktop\321\new-venv\Lib\site-packages\autogen_ext\agents\web_surfer\play
 ---> 68     self._page_script = fh.read()
 
 UnicodeDecodeError: 'cp950' codec can't decode byte 0xe2 in position 11569: illegal multibyte sequence
+
+'''
+
 
 要把Desktop\321\new-venv\Lib\site-packages\autogen_ext\agents\web_surfer\_multimodal_web_surfer.py 裡面的第68行with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "page_script.js"), "rt") as fh:
 改成with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "page_script.js"), "rt", encoding="utf-8") as fh:
