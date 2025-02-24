@@ -3,9 +3,9 @@ forAssistedLearning
 
 
 要有的資料夾
-![image](https://github.com/user-attachments/assets/e4e3ae79-b009-4dd3-88ad-1b97e1822989)
+![image](https://github.com/user-attachments/assets/e4e3ae79-b009-4dd3-88ad-1b97e1822989) 裡面有
 
-裡面有
+
 ![image](https://github.com/user-attachments/assets/0d74700d-5b5a-42fb-b48a-ccb994d680ec)
 
 而像是.env
