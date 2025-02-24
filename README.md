@@ -20,7 +20,7 @@ pip install -U autogenstudio 等
 
 step4. 在終端機執行 python main.py or python multiagent.py
 
-# 如果出現
+### 如果出現
 
 ---------------------------------------------------------------------------
 UnicodeDecodeError                        Traceback (most recent call last)
