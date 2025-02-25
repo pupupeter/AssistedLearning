@@ -91,3 +91,6 @@ UnicodeDecodeError: 'cp950' codec can't decode byte 0xe2 in position 11569: ille
 autogen gemini for rag:
 
 https://github.com/pupupeter/AssistedLearning/blob/main/rag--txt.py
+
+裡面的 test.txt
+
