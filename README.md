@@ -84,3 +84,8 @@ UnicodeDecodeError: 'cp950' codec can't decode byte 0xe2 in position 11569: ille
 改成with open(os.path.join(os.path.abspath(os.path.dirname(__file__)), "page_script.js"), "rt", encoding="utf-8") as fh:
 
 就可以了
+
+
+
+----------------------------
+autogen gemini for rag:
