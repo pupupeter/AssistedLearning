@@ -92,5 +92,7 @@ autogen gemini for rag:
 
 https://github.com/pupupeter/AssistedLearning/blob/main/rag--txt.py
 
-裡面的 test.txt
+裡面的 test.txt:
+
+https://github.com/pupupeter/AssistedLearning/blob/main/test.txt
 
