@@ -2,6 +2,8 @@
 forAssistedLearning
 
 
+### 請注意 這些code 皆是在vscode裡執行，且是使用虛擬環境來製作的
+
 要有的資料夾
 ![image](https://github.com/user-attachments/assets/e4e3ae79-b009-4dd3-88ad-1b97e1822989) 裡面有
 
@@ -96,3 +98,40 @@ https://github.com/pupupeter/AssistedLearning/blob/main/rag--txt.py
 
 https://github.com/pupupeter/AssistedLearning/blob/main/test.txt
 
+注意的點:
+
+
+```
+import os
+from dotenv import load_dotenv
+import asyncio
+
+from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
+from autogen_agentchat.conditions import TextMentionTermination
+from autogen_agentchat.teams import RoundRobinGroupChat
+from autogen_agentchat.ui import Console
+from autogen_ext.models.openai import OpenAIChatCompletionClient
+from autogen_ext.agents.web_surfer import MultimodalWebSurfer
+
+
+
+要記得pip install autogen  autogen_ext 等相關模組
+
+```
+
+
+``` 
+
+model_client = OpenAIChatCompletionClient(
+    model="gemini-1.5-flash-8b",
+    api_key=gemini_api_key,
+    tools=[{"type": "retrieval"}]
+)
+這樣寫才不太會錯誤
+```
+
+``` 
+assistant = AssistantAgent("assistant", model_client)
+web_surfer = MultimodalWebSurfer("web_surfer", model_client)
+user_proxy = UserProxyAgent("user_proxy")
+``` 
