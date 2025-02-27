@@ -41,19 +41,26 @@ user_proxy = UserProxyAgent("user_proxy")
 termination_condition = TextMentionTermination("exit")
 
 # 代理人循環對話
-team = RoundRobinGroupChat([
-    web_surfer, assistant, user_proxy
-], termination_condition=termination_condition)
+team = RoundRobinGroupChat([web_surfer, assistant, user_proxy], termination_condition=termination_condition)
 
 # 檢索步驟：基於文件內容進行檢索
 async def retrieve_info(file_content):
-    # 模擬一個檢索步驟，這裡你可以用 embedding_client 或其他檢索工具進行資料檢索
-    # 假設檢索到與文件內容相關的資料，這裡簡單模擬為同一內容（可以根據需求進行修改）
-    query = f"與以下內容相關的資料：\n\n{file_content}"
-    retrieved_data = await embedding_client.chat_complete(
-        query
-    )  # 使用適當的 API 方法進行檢索，根據需要調整
-    return retrieved_data['choices'][0]['text']
+    try:
+        query = f"與以下內容相關的資料：\n\n{file_content}"
+        
+        # 使用適當的 API 方法進行檢索，這裡調整為正確的格式
+        retrieved_data = await embedding_client.create(
+            model="gemini-1.5-flash-8b",
+            messages=[
+                {"role": "system", "content": "Retrieve related information."},
+                {"role": "user", "content": query}
+            ]
+        )
+        
+        return retrieved_data['choices'][0]['text']
+    except Exception as e:
+        print(f"Error during retrieval: {e}")
+        return "Error during retrieval."
 
 # 啟動對話，讓 AI 進行檢索和生成摘要
 async def main():
