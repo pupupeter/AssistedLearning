@@ -135,3 +135,8 @@ assistant = AssistantAgent("assistant", model_client)
 web_surfer = MultimodalWebSurfer("web_surfer", model_client)
 user_proxy = UserProxyAgent("user_proxy")
 ``` 
+
+
+ragpp.py(含embeding)
+
+ https://github.com/pupupeter/AssistedLearning/blob/main/ragpp.py
