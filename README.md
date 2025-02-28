@@ -183,3 +183,64 @@ async def retrieve_info(file_content):
 
 
 ragpdf.py
+
+https://github.com/pupupeter/AssistedLearning/blob/main/ragpdf.py
+
+更新的東西:
+```
+def cosine_similarity(vec1, vec2):
+    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2) + 1e-10)
+
+
+
+async def get_embedding(text, client):
+    try:
+        # 假設 embedding_client 可透過 create 方法取得向量結果
+        response = await client.create(
+            model="gemini-1.5-flash-8b",
+            messages=[
+                {"role": "system", "content": "請為下列文字生成向量嵌入表示。"},
+                {"role": "user", "content": text}
+            ]
+        )
+        # 假設返回結果在 choices[0]['embedding'] (依照實際 API 格式調整)
+        embedding = response['choices'][0].get('embedding')
+    except Exception as e:
+        print(f"Embedding error: {e}")
+        embedding = None
+    # 若沒有返回 embedding，可暫時以隨機向量示意（實際請使用正確向量）
+    if embedding is None:
+        embedding = np.random.rand(768).tolist()
+    return np.array(embedding)
+
+async def retrieve_relevant_chunks(query, index, client, k=3):
+    query_embedding = await get_embedding(query, client)
+    similarities = []
+    for item in index:
+        sim = cosine_similarity(query_embedding, item["embedding"])
+        similarities.append((sim, item["chunk"]))
+    similarities.sort(key=lambda x: x[0], reverse=True)
+    top_chunks = [chunk for sim, chunk in similarities[:k]]
+    return top_chunks
+
+# 7. 整合流程：從 PDF 讀取、切分、索引、檢索，再結合 web_surfer 進行網路檢索，最後交由生成模型生成摘要
+async def main():
+    # 讀取 PDF 內容
+    pdf_text = extract_text_from_pdf(file_path)
+    if "找不到" in pdf_text or "無法" in pdf_text:
+        print(pdf_text)
+        return
+
+    # 將 PDF 內容切分成片段
+    chunks = split_text(pdf_text, max_words=200)
+
+# 將本地檢索與網路檢索結果結合
+    full_context = f"本地文件相關資訊：\n{local_context}\n\n網路檢索結果：\n{web_context}"
+
+    # 建構生成摘要的提示
+    task_prompt = f"請根據以下資訊生成摘要：\n\n{full_context}\n\n摘要："
+
+
+
+```
+
