@@ -274,6 +274,8 @@ This system utilizes AutoGen and SmolEAgent to implement AI professor debates, i
 - **Result Filtering**: Avoids misinformation or inaccurate data affecting the debate.
 
 ## 3. Workflow
+![image](https://github.com/user-attachments/assets/96b91b3d-eb4c-4a24-908c-a8d8cc478124)
+
 1. **Input Debate Topic**
    - The user or system defines the debate topic.
 2. **Retrieve Relevant Data**
