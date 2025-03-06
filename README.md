@@ -10,19 +10,25 @@ forAssistedLearning
 
 ![image](https://github.com/user-attachments/assets/0d74700d-5b5a-42fb-b48a-ccb994d680ec)
 
-而像是.env
+## 要有的資料夾
+- `new-venv`
 
-main.py、multiagent.py 要在new-venv資料夾 的外面
+## .env 相關資訊
+- `main.py`、`multiagent.py` 要在 `new-venv` 資料夾的外面
 
- ** 一定要在vscode 終端機執行
- 
-step1. 設定虛擬環境 eg. python -m venv 名稱
+### **使用 VSCode 終端機執行**
+1. 設定虛擬環境：
+   ```sh
+   python -m venv 名稱
 
-step2. 執行.\名稱\Scripts\activate
+2. 啟動虛擬環境: .\名稱\Scripts\activate
 
-step3.
+3. 開始執行程式需求
 
-執行:
+4. 終端機執行 python 名稱A.py 即可執行
+
+
+```
 pip install -U autogen-agentchat autogen-ext[openai,web-surfer] python-dotenv
 
 pip install autogen-agentchat python-dotenv playwright
@@ -31,8 +37,8 @@ playwright install
 
 pip install -U autogenstudio 等
 
+```
 
-step4. 在終端機執行 python main.py or python multiagent.py
 
 ### 如果出現
 
