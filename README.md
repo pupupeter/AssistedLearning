@@ -305,7 +305,7 @@ This system utilizes AutoGen and SmolEAgent to implement AI professor debates, i
 3. **AI Role Assignment**
    - AI Professor A: Supports the argument.
    - AI Professor B: Opposes the argument.
-   - AI Judge: Evaluates the validity of both arguments.
+   - AI Judge: Evaluates the validity of both arguments or stop the action.
 4. **Debate Process**
    - AI professors take turns presenting their points.
    - Arguments can be dynamically adjusted based on new information.
