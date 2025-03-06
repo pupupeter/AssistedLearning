@@ -262,7 +262,7 @@ https://github.com/pupupeter/AssistedLearning/blob/main/smoleagent.py
 
 純文字檔(.txt):
 
-pdf RAG+網路資源 :
+pdf RAG+網路資源 :https://github.com/pupupeter/AssistedLearning/blob/main/smoleagentpdf.py
 
 
 
