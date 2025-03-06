@@ -258,7 +258,7 @@ smoleagent 測試
 
 https://github.com/pupupeter/AssistedLearning/blob/main/smoleagent.py
 
-## hugging face token 要自己去申請
+### hugging face token 要自己去申請
 
 
 純文字檔(.txt):
