@@ -325,3 +325,7 @@ This system utilizes AutoGen and SmolEAgent to implement AI professor debates, i
 - **Multilingual Support**
 - **Integration of Knowledge Graphs for Better Reasoning**
 - **Integration with Academic Databases (e.g., Arxiv, Google Scholar)"
+
+## 6. quickstart( to be continued)
+
+
