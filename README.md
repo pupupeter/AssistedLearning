@@ -254,12 +254,15 @@ async def main():
 
 smoleagent 測試
 
+簡單測試:
+https://github.com/pupupeter/AssistedLearning/blob/main/smoleagent.py
+
+## hugging face token 要自己去申請
 
 
+純文字檔(.txt):
 
-
-
-
+pdf RAG+網路資源 :
 
 
 
