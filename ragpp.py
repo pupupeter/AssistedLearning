@@ -10,6 +10,8 @@ from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_ext.agents.web_surfer import MultimodalWebSurfer
 
 # 載入 .env 檔案中的環境變數
+
+```````````````````````````````````HW1更改的部分
 load_dotenv()
 
 gemini_api_key = os.environ.get("GEMINI_API_KEY")
@@ -70,6 +72,6 @@ async def main():
     # 結合檢索到的資料和原始文件內容，作為生成的輸入
     task = f"請根據以下內容和檢索結果撰寫摘要：\n\n{file_content}\n\n{retrieved_data}"
     await Console(team.run_stream(task=task))
-
+````````````````````````````````````````````````
 if __name__ == '__main__':
     asyncio.run(main())
