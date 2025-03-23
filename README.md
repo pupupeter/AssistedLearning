@@ -307,6 +307,11 @@ smoleagent 辯論with html
 
 smoleagent :
 
+
+https://github.com/pupupeter/AssistedLearning/blob/main/654.py
+
+
+
 html:
 
 https://github.com/pupupeter/AssistedLearning/blob/main/56.html
