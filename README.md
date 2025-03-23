@@ -307,7 +307,9 @@ smoleagent 辯論with html
 
 smoleagent :
 
+html
 
+** html 請放在**template** 的資料夾
 
 
 專題?: autogen/smoleagent AI教授辯論
