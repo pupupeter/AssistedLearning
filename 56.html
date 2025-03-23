@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 辯論系統</title>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.js"></script>
+    <script>
+        function uploadPDF() {
+            let fileInput = document.getElementById('pdfFile');
+            let formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            
+            // 顯示加載動畫
+            document.getElementById('debateResults').innerHTML = "<div class='text-center text-xl text-gray-500'>正在處理中，請稍候...</div>";
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('debateResults').innerHTML = `<pre class="text-gray-800">${data.result}</pre>`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('debateResults').innerHTML = "<div class='text-center text-red-500'>發生錯誤，請稍後再試。</div>";
+            });
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="bg-white shadow-lg rounded-lg p-8 space-y-6">
+            <h1 class="text-3xl font-semibold text-center text-indigo-600">AI 辯論系統</h1>
+            <p class="text-center text-lg text-gray-600">上傳 PDF 文件，並讓 AI 進行辯論分析。</p>
+            
+            <div class="flex justify-center items-center">
+                <input type="file" id="pdfFile" accept="application/pdf" class="border border-gray-300 rounded-lg p-2" />
+            </div>
+            <div class="text-center">
+                <button onclick="uploadPDF()" class="bg-indigo-600 text-white py-2 px-6 rounded-lg hover:bg-indigo-700 transition duration-300">上傳並執行辯論</button>
+            </div>
+            
+            <h2 class="text-2xl font-medium text-gray-800">辯論結果</h2>
+            <div id="debateResults" class="mt-4 text-lg text-gray-700">
+                <!-- 這裡將顯示辯論結果 -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
