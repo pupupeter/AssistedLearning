@@ -307,7 +307,9 @@ smoleagent 辯論with html
 
 smoleagent :
 
-html
+html:
+
+https://github.com/pupupeter/AssistedLearning/blob/main/56.html
 
 ** html 請放在**template** 的資料夾
 
