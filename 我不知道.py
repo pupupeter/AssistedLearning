@@ -8,7 +8,7 @@ import google.generativeai as genai
 
 # Load environment variables from .env
 load_dotenv()
-
+#`````````‵‵‵‵‵‵‵‵‵‵‵‵‵‵‵‵HW2內容
 # Define column names (your data columns)
 ITEMS = [
     "班級",
@@ -182,7 +182,7 @@ def main():
         time.sleep(1)
     
     print("Processing complete. Final results saved to:", output_csv)
-
+#```````‵‵‵‵‵``‵‵‵‵‵‵‵‵‵‵‵‵‵‵‵‵HW2內容
 if __name__ == "__main__":
     main()
 
