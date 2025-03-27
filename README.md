@@ -1,5 +1,6 @@
 ## Lesson: DATA STRAUTRE
  [HW1](https://github.com/pupupeter/AssistedLearning/blob/main/ragpp.py)
+ [HW2](https://github.com/pupupeter/AssistedLearning/blob/main/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93.py)
 
 
 
