@@ -6,6 +6,10 @@ HW2
 ![image](https://github.com/user-attachments/assets/0e4356ab-7e86-4e1f-8cfe-d81b19525297)
 
 
+ [HW3](https://github.com/pupupeter/AssistedLearning/blob/main/%E6%88%91%E4%B8%8D%E7%9F%A5%E9%81%93.py)
+
+
+
 
 
 
