@@ -38,8 +38,92 @@ A processed output.csv file with original data and two new columns showing wheth
 
 
 
-
+# HW3
  [HW3](https://github.com/pupupeter/naverplaywright)
+
+# Naver Auto Login and Blog Search Automation
+
+## Introduction
+This script uses `Playwright` to automate login to Naver using a `Line` account. Once logged in, it searches for `peter-0512` and navigates to the blog page. The browser waits for 50 seconds before closing.
+
+## Requirements
+1. Python installed (recommended: Python 3.8+)
+2. Playwright installed
+3. `dotenv` installed (to read `.env` file)
+
+## Installation
+
+### 1. Install Playwright
+```bash
+pip install playwright
+playwright install
+```
+
+### 2. Install dotenv
+```bash
+pip install python-dotenv
+```
+
+### 3. Setup `.env` file
+Create a `.env` file in your project directory and add your LINE login credentials:
+```env
+LINE_EMAIL=your_line_email@example.com
+LINE_PASSWORD=your_line_password
+```
+
+## How to Use
+
+1. Run the script
+```bash
+python script.py
+```
+
+2. Script Workflow
+   - Launches browser
+   - Navigates to Naver login page
+   - Clicks on `Line` login button
+   - Inputs Line account and password
+   - After successful login, redirects back to Naver
+   - Visits Naver Blog
+   - Searches for `peter-0512`
+   - Clicks on the `peter-0512` result
+   - Waits 50 seconds
+   - Takes a screenshot and closes browser
+
+## Features & Technical Details
+- **Human-like Behavior Simulation**
+  - `slow_mo=100` to simulate slower human interaction
+  - Random wait times between keystrokes
+  - Mouse moves randomly before clicks
+
+- **Login Method**
+  - Reads credentials from `.env` using `dotenv`
+  - Auto types email and password with delay to mimic user input
+  - Manual verification may be required if Line prompts additional authentication
+
+- **Search and Navigation**
+  - Accesses Naver Blog
+  - Inputs `peter-0512` in search field
+  - Selects "블로그" (Blog) category
+  - Navigates to the author's blog
+  - Saves a screenshot of the final page
+
+## Notes
+- You might be asked to manually verify your identity on Line (e.g., CAPTCHA, 2FA)
+- Ensure `.env` file is present with correct login credentials
+- Run after installing `Playwright` and `dotenv`
+- Set `headless=False` to watch the automation in action
+
+## Common Errors & Solutions
+| Error Message | Cause | Solution |
+|---------------|-------|----------|
+| `TimeoutError` | Authentication or page took too long | Complete the verification manually and press Enter |
+| `Element not found` | Naver UI changed or wrong selector | Double-check the selector or page layout |
+| `Invalid credentials` | Wrong email or password | Check your `.env` file values |
+| `Playwright not installed` | Dependency missing | Run `pip install playwright && playwright install` |
+
+## Conclusion
+This script is useful for automating Naver-related tasks such as login, searching, and navigating blogs. By mimicking real user behavior, it helps bypass bot detection and improves reliability.
 
 
 
