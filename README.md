@@ -41,7 +41,7 @@ A processed output.csv file with original data and two new columns showing wheth
 # HW3
  [HW3](https://github.com/pupupeter/naverplaywright)
 
-# Naver Auto Login and Blog Search Automation
+## Naver Auto Login and Blog Search Automation
 
 ## Introduction
 This script uses `Playwright` to automate login to Naver using a `Line` account. Once logged in, it searches for `peter-0512` and navigates to the blog page. The browser waits for 50 seconds before closing.
