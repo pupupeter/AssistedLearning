@@ -6,6 +6,39 @@ HW2
 ![image](https://github.com/user-attachments/assets/0e4356ab-7e86-4e1f-8cfe-d81b19525297)
 
 
+ ## Purpose:
+ Processes student data from a CSV file, uses the Gemini API to check whether the fields "Class" (班級) and "Name" (姓名) are filled in, and outputs a new CSV file with those fields marked as either 1 (present) or 0 (missing).
+
+## What it does step-by-step:
+Reads a CSV file passed as a command-line argument.
+
+Automatically selects the relevant column (e.g., "Class", "Name", "Department Admitted", etc.) that likely contains student dialogue or information.
+
+Batches the data (10 records at a time) and sends it to Google's Gemini model.
+
+Prompts the model to return JSON-formatted results with just two fields:
+
+"班級" (Class)
+
+"姓名" (Name)
+→ Values are 1 if present, 0 if missing or invalid.
+
+Parses the response and flags the data accordingly.
+
+Appends the results to a new output CSV file (output.csv), including the original data plus two new columns:
+
+班級 (1 or 0)
+
+姓名 (1 or 0)
+
+## Output:
+A processed output.csv file with original data and two new columns showing whether "Class" and "Name" are present for each entry.
+
+
+
+
+
+
  [HW3](https://github.com/pupupeter/naverplaywright)
 
 
