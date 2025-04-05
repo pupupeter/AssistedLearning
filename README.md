@@ -129,11 +129,62 @@ This script is useful for automating Naver-related tasks such as login, searchin
 
 
 
-
+# HW4 
 
 [HW4](https://github.com/pupupeter/AssistedLearning/blob/main/csv%E8%BD%89pdf%E7%9A%84%E6%96%B9%E6%B3%95.py)
 
 [HW4-PDF](https://github.com/pupupeter/AssistedLearning/blob/main/report_20250331_091049%20(1).pdf)
+
+## CSV Report Generator 
+This Python application allows users to upload a CSV file and generate a customized report using Google Gemini's AI model. The final analysis is formatted as a stylish PDF file, with color-coded tables and support for Chinese fonts on Windows.
+
+## Features
+CSV File Upload: Upload your dataset (e.g., student admission results).
+
+Custom Prompt Input: Guide the AI by providing a custom prompt for analysis (default prompt available).
+
+AI-Powered Report Generation: The script uses Google Gemini Pro (via google.generativeai) to analyze the data.
+
+Markdown Table Extraction: If the response contains a markdown-style table, it will be automatically parsed and turned into a structured pandas.DataFrame.
+
+PDF Output with Style:
+
+Alternating row colors
+
+Custom Chinese fonts (auto-loaded from system fonts)
+
+Text color varies depending on admission method (e.g., blue for "繁星推薦", red for "個人申請")
+
+## Technologies Used
+gradio: Simple web UI for user input/output.
+
+google.generativeai: Connects to Gemini 1.5 Pro to generate human-like responses.
+
+fpdf: Used for creating PDF reports with tables and multilingual support.
+
+pandas: Parses and processes CSV data.
+
+dotenv: Loads sensitive environment variables like GEMINI_API_KEY.
+
+## How It Works
+The user uploads a CSV file (e.g., with fields like class, name, school, major, and admission method).
+
+The file is processed in blocks (30 rows at a time) and sent to Gemini with the prompt.
+
+The AI's responses are concatenated, and if markdown tables are found, they are parsed into a DataFrame.
+
+The DataFrame is rendered into a PDF with color-coded content.
+
+Users can preview the AI-generated report and download the final PDF.
+
+## Example Table Input
+markdown
+複製
+編輯
+| 班級 | 姓名 | 錄取大學 | 錄取學系 | 升學管道 |
+|------|------|----------|----------|----------|
+| 301  | 陳O孝 | 國立臺灣大學 | 地質科學系 | 繁星推薦 |
+This table will be parsed and shown with proper layout in the PDF file.
 
 
 
