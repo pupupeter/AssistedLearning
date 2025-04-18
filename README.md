@@ -177,6 +177,11 @@ The DataFrame is rendered into a PDF with color-coded content.
 
 Users can preview the AI-generated report and download the final PDF.
 
+
+
+
+
+
 ## Example Table Input
 markdown
 複製
@@ -193,7 +198,6 @@ This table will be parsed and shown with proper layout in the PDF file.
 
 
 
-[FINAL PROJECT](https://github.com/pupupeter/datastructure) 
 
 
 
@@ -234,6 +238,18 @@ forAssistedLearning
 
 ## .env 相關資訊
 - `main.py`、`multiagent.py` 要在 `new-venv` 資料夾的外面
+
+
+
+
+
+
+
+[FINAL PROJECT](https://github.com/pupupeter/datastructure) 
+
+
+
+
 
 ### **使用 VSCode 終端機執行**
 1. 設定虛擬環境：
